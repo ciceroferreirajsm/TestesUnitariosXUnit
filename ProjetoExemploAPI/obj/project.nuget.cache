@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "cVhqpf48Y/1+R4m+FJAxuP48Z6sapuPBvAMx9+uuMT13yxiL5tZI5n4XGZElQp3S9dPPrGj5J5TekGtkh2Qb4w==",
+  "dgSpecHash": "fpCegyhDzBtFhDh8/rhyp4kUWwADVOdSuwnfOBb+B3KDAOZd7tz7iIl4GuOv3g/C8xwIweKryzu89T7Rtjk93w==",
   "success": true,
   "projectFilePath": "E:\\Heavy Soldier Files\\Desktop\\Projetos\\ProjetoExemploAPI\\ProjetoExemploAPI\\ProjetoExemploAPI.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Usuário\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\Usuário\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Usuário\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Usuário\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",
