@@ -34,6 +34,20 @@ namespace ProjetoExemploAPI.Services
             }
         }
 
+        public async Task<Produto> ObterPorId(int IdProduto)
+        {
+            try
+            {
+                Produto retornoProduto = await _produtoRepository.ObterPorId(IdProduto);
+
+                return retornoProduto;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         #endregion Construtores
 
     }

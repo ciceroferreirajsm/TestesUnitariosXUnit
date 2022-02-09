@@ -44,5 +44,19 @@ namespace ProjetoExemploAPI.repositories
                 throw ex;
             }
         }
+
+        public async Task<Produto> ObterPorId(int IdProduto)
+        {
+            try
+            {
+                Produto obj = await _contexto.Produtos.FirstOrDefaultAsync(x => x.ProdutoId == IdProduto);
+
+                return obj;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

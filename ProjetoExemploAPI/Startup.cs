@@ -42,13 +42,13 @@ namespace ProjetoExemploAPI
             {
                 option.SwaggerDoc("v1", new OpenApiInfo
                 {
-                    Title = "Area Vendedor API",
+                    Title = "Cicero Junior API",
                     Version = "v1",
-                    Description = "API da Area Vendedor",
+                    Description = "API de teste",
                     Contact = new OpenApiContact
                     {
-                        Name = "Ti Technos",
-                        Email = "sistemas@grupotechnos.com.br",
+                        Name = "Cicero JR",
+                        Email = "ciceronascimentu@gmail.com",
                     }
                 });
             });
@@ -72,7 +72,7 @@ namespace ProjetoExemploAPI
 
             app.UseSwaggerUI(option =>
             {
-                option.SwaggerEndpoint("/swagger/v1/swagger.json", "Area Vendedor API V1 " + env.EnvironmentName);
+                option.SwaggerEndpoint("/swagger/v1/swagger.json", "Cicero Junior API");
                 option.RoutePrefix = "swagger";
                 option.DocExpansion(DocExpansion.None);
             });

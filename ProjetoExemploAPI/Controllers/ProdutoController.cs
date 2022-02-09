@@ -21,13 +21,42 @@ namespace ProjetoExemploAPI.Controllers
         }
 
         [HttpPost]
-        public async Task<Produto> Post(Produto produto)
+        public async Task<IActionResult> Post(Produto produto)
         {
             try
             {
                 Produto retorno = await _produtoService.AdicionarProduto(produto);
 
-                return retorno;
+                if(retorno != null)
+                {
+                    return StatusCode(201);
+                }
+                else
+                {
+                    return NoContent();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Get(int Idproduto)
+        {
+            try
+            {
+                Produto retorno = await _produtoService.ObterPorId(Idproduto);
+
+                if (retorno != null)
+                {
+                    return Ok(retorno);
+                }
+                else
+                {
+                    return BadRequest("Object was Not Found");
+                }
             }
             catch (Exception ex)
             {
