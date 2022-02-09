@@ -61,3 +61,8 @@ E:\Heavy Soldier Files\Desktop\Projetos\ProjetoExemploAPI\ProjetoExemploAPI\obj\
 E:\Heavy Soldier Files\Desktop\Projetos\ProjetoExemploAPI\ProjetoExemploAPI\obj\Debug\netcoreapp3.1\ProjetoExemploAPI.pdb
 E:\Heavy Soldier Files\Desktop\Projetos\ProjetoExemploAPI\ProjetoExemploAPI\obj\Debug\netcoreapp3.1\ProjetoExemploAPI.genruntimeconfig.cache
 E:\Heavy Soldier Files\Desktop\Projetos\ProjetoExemploAPI\ProjetoExemploAPI\bin\Debug\netcoreapp3.1\AutoMapper.dll
+E:\Heavy Soldier Files\Desktop\Projetos\ProjetoExemploAPI\ProjetoExemploAPI\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+E:\Heavy Soldier Files\Desktop\Projetos\ProjetoExemploAPI\ProjetoExemploAPI\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+E:\Heavy Soldier Files\Desktop\Projetos\ProjetoExemploAPI\ProjetoExemploAPI\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+E:\Heavy Soldier Files\Desktop\Projetos\ProjetoExemploAPI\ProjetoExemploAPI\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+E:\Heavy Soldier Files\Desktop\Projetos\ProjetoExemploAPI\ProjetoExemploAPI\obj\Debug\netcoreapp3.1\ProjetoExemploAPI.MvcApplicationPartsAssemblyInfo.cs

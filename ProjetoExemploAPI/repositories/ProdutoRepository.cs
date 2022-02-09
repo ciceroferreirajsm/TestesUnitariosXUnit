@@ -24,7 +24,7 @@ namespace ProjetoExemploAPI.repositories
                 {
                     await _contexto.Produtos.AddAsync(produto);
 
-                    await _contexto.SaveChangesAsync();
+                    _contexto.SaveChanges();
 
                     return produto;
                 }
@@ -34,7 +34,7 @@ namespace ProjetoExemploAPI.repositories
 
                     _contexto.Produtos.Update(obj);
 
-                    await _contexto.SaveChangesAsync();
+                    _contexto.SaveChanges();
 
                     return obj;
                 }
