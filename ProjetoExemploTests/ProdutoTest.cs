@@ -28,7 +28,7 @@ namespace ProjetoExemploTests
             var context = serviceProvider.GetService<MyContext>();
  
             var produtoRepository = new ProdutoRepository(context, logger, Imapper);
-            Produto produto = new Produto(0, "referencia dos testes unitarios.");
+            Produto produto = new Produto(0, "referencia dos testes unitarios 1006.");
 
             //Act
             produto = await produtoRepository.InserirOuAtualizar(produto);
@@ -38,7 +38,7 @@ namespace ProjetoExemploTests
         }
 
         [Fact]
-        public async Task Test_ObterProduto_produto()
+        public async Task Test_obter_produto()
         {
             //Arrange
             var serviceProvider = Obter_configuracoes();
@@ -50,12 +50,51 @@ namespace ProjetoExemploTests
 
             //Act
             var produtoRepository = new ProdutoRepository(context, logger, Imapper);
-            Produto produto = await produtoRepository.ObterPorId(10);
+            Produto produto = await produtoRepository.ObterPorId(1003);
 
             //Assert
             Assert.NotNull(produto);
         }
 
+        [Fact]
+        public async Task Test_deletar_produto()
+        {
+            //Arrange
+            var serviceProvider = Obter_configuracoes();
+
+            var factory = serviceProvider.GetService<ILoggerFactory>();
+            var logger = factory.CreateLogger<ProdutoController>();
+            var Imapper = serviceProvider.GetService<IMapper>();
+            var context = serviceProvider.GetService<MyContext>();
+
+            //Act
+            var produtoRepository = new ProdutoRepository(context, logger, Imapper);
+            bool produtoExcluido = await produtoRepository.ExcluirProduto(1004);
+
+            //Assert
+            Assert.True(produtoExcluido);
+        }
+
+        [Fact]
+        public async Task Test_atualizar_produto()
+        {
+            //Arrange
+            var serviceProvider = Obter_configuracoes();
+
+            var factory = serviceProvider.GetService<ILoggerFactory>();
+            var logger = factory.CreateLogger<ProdutoController>();
+            var Imapper = serviceProvider.GetService<IMapper>();
+            var context = serviceProvider.GetService<MyContext>();
+
+            //Act
+            var produtoRepository = new ProdutoRepository(context, logger, Imapper);
+
+            Produto produto = new Produto(1005, "referencia dos testes unitarios atualizado.");
+            produto = await produtoRepository.AtualizarProduto(produto);
+
+            //Assert
+            Assert.NotNull(produto);
+        }
 
         [Fact]
         public ServiceProvider Obter_configuracoes()
