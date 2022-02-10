@@ -10,7 +10,21 @@ namespace ProjetoExemploAPI.repositories
 {
     public class ProdutoRepository : BaseRepository, IProdutoRepository
     {
-        public ProdutoRepository(MyContext contexto, ILogger logger, IMapper mapper) : base(contexto, logger, mapper)
+
+        public readonly MyContext _contexto;
+
+        public readonly ILogger _logger;
+
+        public readonly IMapper _mapper;
+
+        public ProdutoRepository(MyContext contexto, ILogger logger, IMapper mapper)
+        {
+            _contexto = contexto ?? throw new ArgumentNullException(nameof(contexto));
+            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+            _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
+        }
+
+        public ProdutoRepository()
         {
         }
 

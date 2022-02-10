@@ -20,6 +20,10 @@ namespace ProjetoExemploAPI.Services
             _produtoRepository = produtoRepository ?? throw new ArgumentNullException(nameof(produtoRepository));
         }
 
+        public ProdutoService()
+        {
+        }
+
         public async Task<Produto> AdicionarProduto(Produto produto)
         {
             try

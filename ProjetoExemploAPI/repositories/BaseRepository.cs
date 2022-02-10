@@ -15,6 +15,10 @@ namespace ProjetoExemploAPI.repositories
 
         public readonly IMapper _mapper;
 
+        public BaseRepository()
+        {
+        }
+
         #endregion Propriedades
 
         #region Construtores
@@ -24,6 +28,8 @@ namespace ProjetoExemploAPI.repositories
             _contexto = contexto ?? throw new ArgumentNullException(nameof(contexto));
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         }
+
+
 
         #endregion Construtores
     }

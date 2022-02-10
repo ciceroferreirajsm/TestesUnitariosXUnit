@@ -48,7 +48,6 @@ E:\Heavy Soldier Files\Desktop\Projetos\ProjetoExemploAPI\ProjetoExemploAPI\bin\
 E:\Heavy Soldier Files\Desktop\Projetos\ProjetoExemploAPI\ProjetoExemploAPI\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
 E:\Heavy Soldier Files\Desktop\Projetos\ProjetoExemploAPI\ProjetoExemploAPI\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 E:\Heavy Soldier Files\Desktop\Projetos\ProjetoExemploAPI\ProjetoExemploAPI\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-E:\Heavy Soldier Files\Desktop\Projetos\ProjetoExemploAPI\ProjetoExemploAPI\obj\Debug\netcoreapp3.1\ProjetoExemploAPI.csproj.AssemblyReference.cache
 E:\Heavy Soldier Files\Desktop\Projetos\ProjetoExemploAPI\ProjetoExemploAPI\obj\Debug\netcoreapp3.1\ProjetoExemploAPI.GeneratedMSBuildEditorConfig.editorconfig
 E:\Heavy Soldier Files\Desktop\Projetos\ProjetoExemploAPI\ProjetoExemploAPI\obj\Debug\netcoreapp3.1\ProjetoExemploAPI.AssemblyInfoInputs.cache
 E:\Heavy Soldier Files\Desktop\Projetos\ProjetoExemploAPI\ProjetoExemploAPI\obj\Debug\netcoreapp3.1\ProjetoExemploAPI.AssemblyInfo.cs
@@ -66,3 +65,4 @@ E:\Heavy Soldier Files\Desktop\Projetos\ProjetoExemploAPI\ProjetoExemploAPI\bin\
 E:\Heavy Soldier Files\Desktop\Projetos\ProjetoExemploAPI\ProjetoExemploAPI\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
 E:\Heavy Soldier Files\Desktop\Projetos\ProjetoExemploAPI\ProjetoExemploAPI\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
 E:\Heavy Soldier Files\Desktop\Projetos\ProjetoExemploAPI\ProjetoExemploAPI\obj\Debug\netcoreapp3.1\ProjetoExemploAPI.MvcApplicationPartsAssemblyInfo.cs
+E:\Heavy Soldier Files\Desktop\Projetos\ProjetoExemploAPI\ProjetoExemploAPI\obj\Debug\netcoreapp3.1\ProjetoExemploAPI.csproj.AssemblyReference.cache
