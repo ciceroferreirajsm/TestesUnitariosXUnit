@@ -28,10 +28,29 @@ namespace ProjetoExemploTests
             var context = serviceProvider.GetService<MyContext>();
  
             var produtoRepository = new ProdutoRepository(context, logger, Imapper);
-            Produto produto = new Produto(0, "teste");
+            Produto produto = new Produto(0, "referencia dos testes unitarios.");
 
             //Act
             produto = await produtoRepository.InserirOuAtualizar(produto);
+
+            //Assert
+            Assert.NotNull(produto);
+        }
+
+        [Fact]
+        public async Task Test_ObterProduto_produto()
+        {
+            //Arrange
+            var serviceProvider = Obter_configuracoes();
+
+            var factory = serviceProvider.GetService<ILoggerFactory>();
+            var logger = factory.CreateLogger<ProdutoController>();
+            var Imapper = serviceProvider.GetService<IMapper>();
+            var context = serviceProvider.GetService<MyContext>();
+
+            //Act
+            var produtoRepository = new ProdutoRepository(context, logger, Imapper);
+            Produto produto = await produtoRepository.ObterPorId(10);
 
             //Assert
             Assert.NotNull(produto);
