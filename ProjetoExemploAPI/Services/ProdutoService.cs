@@ -48,6 +48,34 @@ namespace ProjetoExemploAPI.Services
             }
         }
 
+        public async Task<bool> ExcluirProduto(int IdProduto)
+        {
+            try
+            {
+                bool produtoExcluido = await _produtoRepository.ExcluirProduto(IdProduto);
+
+                return produtoExcluido;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public async Task<Produto> AtualizarProduto(Produto produto)
+        {
+            try
+            {
+                Produto produtoAtualizado = await _produtoRepository.AtualizarProduto(produto);
+
+                return produtoAtualizado;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         #endregion Construtores
 
     }

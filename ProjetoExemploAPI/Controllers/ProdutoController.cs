@@ -20,14 +20,19 @@ namespace ProjetoExemploAPI.Controllers
             _produtoService = produtoService ?? throw new ArgumentNullException(nameof(produtoService));
         }
 
-        [HttpPost]
-        public async Task<IActionResult> Post(Produto produto)
+        [HttpPut("AdicionarProduto")]
+        public async Task<IActionResult> AdicionarProduto(string referencia)
         {
             try
             {
-                Produto retorno = await _produtoService.AdicionarProduto(produto);
+                Produto produto = new Produto()
+                {
+                    Referencia = referencia
+                };
 
-                if(retorno != null)
+                produto = await _produtoService.AdicionarProduto(produto);
+
+                if(produto != null)
                 {
                     return StatusCode(201);
                 }
@@ -42,16 +47,60 @@ namespace ProjetoExemploAPI.Controllers
             }
         }
 
-        [HttpGet]
-        public async Task<IActionResult> Get(int Idproduto)
+        [HttpGet("ObterProduto")]
+        public async Task<IActionResult> ObterProduto(int IdProduto)
         {
             try
             {
-                Produto retorno = await _produtoService.ObterPorId(Idproduto);
+                Produto retorno = await _produtoService.ObterPorId(IdProduto);
 
                 if (retorno != null)
                 {
                     return Ok(retorno);
+                }
+                else
+                {
+                    return BadRequest("Object was Not Found");
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        [HttpDelete("ExcluirProduto")]
+        public async Task<IActionResult> ExcluirProduto(int IdProduto)
+        {
+            try
+            {
+                bool produtoExcluido = await _produtoService.ExcluirProduto(IdProduto);
+
+                if (produtoExcluido)
+                {
+                    return Ok();
+                }
+                else
+                {
+                    return BadRequest("Object was Not Found");
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        [HttpPost("AtualizarProduto")]
+        public async Task<IActionResult> AtualizarProduto(Produto produto)
+        {
+            try
+            {
+                Produto produtoAtualizado = await _produtoService.AtualizarProduto(produto);
+
+                if (produtoAtualizado != null)
+                {
+                    return Ok();
                 }
                 else
                 {

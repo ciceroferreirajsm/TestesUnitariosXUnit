@@ -58,11 +58,13 @@ namespace ProjetoExemploAPI
 
             MapperConfiguration config = new MapperConfiguration(cfg =>
             {
+                cfg.CreateMap<Produto, Produto>()
+                .ForMember(x => x.ProdutoId, opt => opt.Ignore());
             });
 
             IMapper mapper = config.CreateMapper();
 
-            services.AddSingleton(mapper);
+            services.AddSingleton(mapper);            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

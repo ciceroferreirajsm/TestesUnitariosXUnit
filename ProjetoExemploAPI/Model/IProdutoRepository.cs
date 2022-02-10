@@ -7,5 +7,9 @@ namespace ProjetoExemploAPI.Model
         Task<Produto> InserirOuAtualizar(Produto produto);
 
         Task<Produto> ObterPorId(int IdProduto);
+
+        Task<bool> ExcluirProduto(int IdProduto);
+
+        Task<Produto> AtualizarProduto(Produto produto);
     }
 }
