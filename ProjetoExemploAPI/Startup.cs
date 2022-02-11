@@ -7,6 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.IdentityModel.Logging;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using ProjetoExemploAPI.Context;
@@ -35,6 +36,9 @@ namespace ProjetoExemploAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddSingleton<IConfiguration>(Configuration);
+
+            IdentityModelEventSource.ShowPII = true;
 
             var connection = @"Server=(localdb)\mssqllocaldb;Database=AspCore_NovoDB;Trusted_Connection=True;";
             services.AddDbContext<MyContext>(options => options.UseSqlServer(connection));
@@ -52,7 +56,20 @@ namespace ProjetoExemploAPI
                         Email = "ciceronascimentu@gmail.com",
                     }
                 });
-
+                option.AddSecurityRequirement(new OpenApiSecurityRequirement
+                {
+                    {
+                          new OpenApiSecurityScheme
+                          {
+                              Reference = new OpenApiReference
+                              {
+                                  Type = ReferenceType.SecurityScheme,
+                                  Id = "Bearer"
+                              }
+                          },
+                         new string[] {}
+                    }
+                });
                 option.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
                 {
                     Name = "Authorization",
@@ -63,46 +80,27 @@ namespace ProjetoExemploAPI
                     Description = "Autorização JWT Header usando scheme Bearer."
                 });
             });
-
-
-            services.AddAuthentication(option =>
+            services.AddAuthentication(opt =>
             {
-                option.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-                option.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-            })
-            .AddJwtBearer(option =>
+                opt.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                opt.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            }).AddJwtBearer(options =>
             {
-                option.TokenValidationParameters = new TokenValidationParameters
+                options.TokenValidationParameters = new TokenValidationParameters
                 {
                     ValidateIssuer = true,
                     ValidateAudience = true,
-                    ValidateLifetime = false,
-                    ValidateIssuerSigningKey = false,
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["JwtToken:SecretKey"])),
-                };
-
-                option.Events = new JwtBearerEvents
-                {
-                    OnAuthenticationFailed = context =>
-                    {
-                        Console.WriteLine("OnAuthenticationFailed: " + context.Exception.Message);
-
-                        return Task.CompletedTask;
-                    },
-
-                    OnTokenValidated = context =>
-                    {
-                        Console.WriteLine("OnTokenValidated: " + context.SecurityToken);
-
-                        return Task.CompletedTask;
-                    }
+                    ValidateLifetime = true,
+                    ValidateIssuerSigningKey = true,
+                    ValidIssuer = Configuration["Jwt:Issuer"],
+                    ValidAudience = Configuration["Jwt:Audience"],
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:Key"]))
                 };
             });
 
             services.AddTransient<IProdutoService, ProdutoService>();
             services.AddTransient<ILogger, LoggerService>();
             services.AddTransient<IProdutoRepository, ProdutoRepository>();
-            services.AddTransient<IAuthService, AuthService>();
 
             MapperConfiguration config = new MapperConfiguration(cfg =>
             {
@@ -110,44 +108,39 @@ namespace ProjetoExemploAPI
                 .ForMember(x => x.ProdutoId, opt => opt.Ignore());
             });
 
-            IMapper mapper = config.CreateMapper();
+        IMapper mapper = config.CreateMapper();
 
-            services.AddSingleton(mapper);
-
-            services.AddAuthorization(option =>
-            {
-                option.AddPolicy("Cicero", policy => policy.RequireClaim(ClaimTypes.Name, "Cicero"));
-            });
+        services.AddSingleton(mapper);
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+    // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+    public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+    {
+        app.UseSwagger();
+
+        app.UseSwaggerUI(option =>
         {
-            app.UseSwagger();
+            option.SwaggerEndpoint("/swagger/v1/swagger.json", "Cicero Junior API");
+            option.RoutePrefix = "swagger";
+            option.DocExpansion(DocExpansion.None);
+        });
 
-            app.UseSwaggerUI(option =>
-            {
-                option.SwaggerEndpoint("/swagger/v1/swagger.json", "Cicero Junior API");
-                option.RoutePrefix = "swagger";
-                option.DocExpansion(DocExpansion.None);
-            });
-
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
-
-            app.UseHttpsRedirection();
-
-            app.UseRouting();
-
-            app.UseAuthentication();
-            app.UseAuthorization();
-
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllers();
-            });
+        if (env.IsDevelopment())
+        {
+            app.UseDeveloperExceptionPage();
         }
+
+        app.UseHttpsRedirection();
+
+        app.UseRouting();
+
+        app.UseAuthentication();
+        app.UseAuthorization();
+
+        app.UseEndpoints(endpoints =>
+        {
+            endpoints.MapControllers();
+        });
     }
+}
 }

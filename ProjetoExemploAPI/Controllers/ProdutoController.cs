@@ -7,9 +7,8 @@ using System.Threading.Tasks;
 
 namespace ProjetoExemploAPI.Controllers
 {
-    [Authorize]
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class ProdutoController : ControllerBase
     {
         private readonly ILogger<ProdutoController> _logger;
@@ -22,7 +21,7 @@ namespace ProjetoExemploAPI.Controllers
             _produtoService = produtoService ?? throw new ArgumentNullException(nameof(produtoService));
         }
 
-        [Authorize(Policy = "Cicero")]
+        [Authorize]
         [HttpPut("AdicionarProduto/{referencia}")]
         public async Task<IActionResult> AdicionarProduto(string referencia)
         {
@@ -50,8 +49,8 @@ namespace ProjetoExemploAPI.Controllers
             }
         }
 
-        [Authorize(Policy = "Cicero")]
-        [HttpGet("ObterProduto/{Id}")]
+        [Authorize]
+        [HttpGet("ObterProduto/{IdProduto}")]
         public async Task<IActionResult> ObterProduto(int IdProduto)
         {
             try
@@ -74,7 +73,7 @@ namespace ProjetoExemploAPI.Controllers
         }
 
         [Authorize(Policy = "Cicero")]
-        [HttpDelete("ExcluirProduto/{Id}")]
+        [HttpDelete("ExcluirProduto/{IdProduto}")]
         public async Task<IActionResult> ExcluirProduto(int IdProduto)
         {
             try
