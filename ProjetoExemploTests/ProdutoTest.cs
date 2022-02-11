@@ -6,6 +6,7 @@ using Moq;
 using ProjetoExemploAPI.Context;
 using ProjetoExemploAPI.Controllers;
 using ProjetoExemploAPI.Model;
+using ProjetoExemploAPI.Model.Produtos;
 using ProjetoExemploAPI.repositories;
 using ProjetoExemploAPI.Services;
 using System;

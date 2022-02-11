@@ -22,7 +22,7 @@ namespace ProjetoExemploAPI.Controllers
         }
 
         [Authorize]
-        [HttpPut("AdicionarProduto/{referencia}")]
+        [HttpPost("AdicionarProduto/{referencia}")]
         public async Task<IActionResult> AdicionarProduto(string referencia)
         {
             try
@@ -50,7 +50,7 @@ namespace ProjetoExemploAPI.Controllers
         }
 
         [Authorize]
-        [HttpGet("ObterProduto/{IdProduto}")]
+        [Route("ObterProduto/{IdProduto}")]
         public async Task<IActionResult> ObterProduto(int IdProduto)
         {
             try
@@ -73,7 +73,8 @@ namespace ProjetoExemploAPI.Controllers
         }
 
         [Authorize(Policy = "Cicero")]
-        [HttpDelete("ExcluirProduto/{IdProduto}")]
+        [Route("ExcluirProduto/{IdProduto}")]
+        [HttpDelete]
         public async Task<IActionResult> ExcluirProduto(int IdProduto)
         {
             try
@@ -96,7 +97,7 @@ namespace ProjetoExemploAPI.Controllers
         }
 
         [Authorize(Policy = "Cicero")]
-        [HttpPost("AtualizarProduto")]
+        [HttpPut("AtualizarProduto/{IdProduto}")]
         public async Task<IActionResult> AtualizarProduto(Produto produto)
         {
             try
