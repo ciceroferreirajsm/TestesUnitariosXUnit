@@ -2,13 +2,13 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using ProjetoExemploAPI.Context;
-using ProjetoExemploAPI.Model;
+using ProjetoExemploAPI.Model.Produtos;
 using System;
 using System.Threading.Tasks;
 
 namespace ProjetoExemploAPI.repositories
 {
-    public class ProdutoRepository : BaseRepository, IProdutoRepository
+    public class ProdutoRepository : IProdutoRepository
     {
 
         public readonly MyContext _contexto;

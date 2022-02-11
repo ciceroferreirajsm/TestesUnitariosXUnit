@@ -149,3 +149,4 @@ E:\Heavy Soldier Files\Desktop\Projetos\ProjetoExemploAPI\ProjetoExemploTests\ob
 E:\Heavy Soldier Files\Desktop\Projetos\ProjetoExemploAPI\ProjetoExemploTests\obj\Debug\netcoreapp3.1\ProjetoExemploTests.dll
 E:\Heavy Soldier Files\Desktop\Projetos\ProjetoExemploAPI\ProjetoExemploTests\obj\Debug\netcoreapp3.1\ProjetoExemploTests.pdb
 E:\Heavy Soldier Files\Desktop\Projetos\ProjetoExemploAPI\ProjetoExemploTests\obj\Debug\netcoreapp3.1\ProjetoExemploTests.genruntimeconfig.cache
+E:\Heavy Soldier Files\Desktop\Projetos\ProjetoExemploAPI\ProjetoExemploTests\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll

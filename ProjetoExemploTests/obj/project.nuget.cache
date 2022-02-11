@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "Uac/IYMV2AFd6vuMZJ6tH6scrOF6qpCEnaoG/tWEKem+Gqr7NvdbVpNlSpNgrvLduOgCIq6B5pjL1Zk90wCN7w==",
+  "dgSpecHash": "mc1NlkRJBdHF2NdXDLVYDGF1JTQZowyVTH66+BrwbbA7EiJndBToUzRztlaY6C0t+6YD5K7kP5X74CqNIUYoLQ==",
   "success": true,
   "projectFilePath": "E:\\Heavy Soldier Files\\Desktop\\Projetos\\ProjetoExemploAPI\\ProjetoExemploTests\\ProjetoExemploTests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Usuário\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\Usuário\\.nuget\\packages\\castle.core\\4.4.0\\castle.core.4.4.0.nupkg.sha512",
     "C:\\Users\\Usuário\\.nuget\\packages\\coverlet.collector\\1.2.0\\coverlet.collector.1.2.0.nupkg.sha512",
+    "C:\\Users\\Usuário\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\3.1.0\\microsoft.aspnetcore.authentication.jwtbearer.3.1.0.nupkg.sha512",
     "C:\\Users\\Usuário\\.nuget\\packages\\microsoft.codecoverage\\16.5.0\\microsoft.codecoverage.16.5.0.nupkg.sha512",
     "C:\\Users\\Usuário\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Usuário\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",

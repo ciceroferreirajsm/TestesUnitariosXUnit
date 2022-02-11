@@ -1,5 +1,4 @@
-﻿using Microsoft.Extensions.Logging;
-using ProjetoExemploAPI.Model;
+﻿using ProjetoExemploAPI.Model.Produtos;
 using System;
 using System.Threading.Tasks;
 

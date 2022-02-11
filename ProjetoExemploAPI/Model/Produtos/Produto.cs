@@ -1,4 +1,4 @@
-﻿namespace ProjetoExemploAPI.Model
+﻿namespace ProjetoExemploAPI.Model.Produtos
 {
     public class Produto
     {

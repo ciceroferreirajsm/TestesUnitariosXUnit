@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "pdcUeN1w6vaD0n2avm915Z36+h2Zuh8SkYY1Thl2VT6xx4meQUqJMBR318qmMV9JCHaHtk3iHGZ+8D+1fli7iA==",
+  "dgSpecHash": "LHg5tEzDLnnXb4XMgQyLDb0bfj8QPDKI8e06woiEbtzstvcIhTagLqxJG+CF5QmXbc0J1WZqb1peEuPMi4SDZw==",
   "success": true,
   "projectFilePath": "E:\\Heavy Soldier Files\\Desktop\\Projetos\\ProjetoExemploAPI\\ProjetoExemploAPI\\ProjetoExemploAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Usuário\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\Usuário\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
+    "C:\\Users\\Usuário\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\3.1.0\\microsoft.aspnetcore.authentication.jwtbearer.3.1.0.nupkg.sha512",
     "C:\\Users\\Usuário\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Usuário\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",
     "C:\\Users\\Usuário\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.0.1\\microsoft.data.sqlclient.sni.runtime.2.0.1.nupkg.sha512",

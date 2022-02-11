@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using ProjetoExemploAPI.Model;
+using ProjetoExemploAPI.Model.Produtos;
 
 namespace ProjetoExemploAPI.Context
 {

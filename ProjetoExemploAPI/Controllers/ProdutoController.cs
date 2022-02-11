@@ -1,11 +1,13 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using ProjetoExemploAPI.Model;
+using ProjetoExemploAPI.Model.Produtos;
 using System;
 using System.Threading.Tasks;
 
 namespace ProjetoExemploAPI.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("[controller]")]
     public class ProdutoController : ControllerBase
@@ -20,7 +22,8 @@ namespace ProjetoExemploAPI.Controllers
             _produtoService = produtoService ?? throw new ArgumentNullException(nameof(produtoService));
         }
 
-        [HttpPut("AdicionarProduto")]
+        [Authorize(Policy = "Cicero")]
+        [HttpPut("AdicionarProduto/{referencia}")]
         public async Task<IActionResult> AdicionarProduto(string referencia)
         {
             try
@@ -47,7 +50,8 @@ namespace ProjetoExemploAPI.Controllers
             }
         }
 
-        [HttpGet("ObterProduto")]
+        [Authorize(Policy = "Cicero")]
+        [HttpGet("ObterProduto/{Id}")]
         public async Task<IActionResult> ObterProduto(int IdProduto)
         {
             try
@@ -69,7 +73,8 @@ namespace ProjetoExemploAPI.Controllers
             }
         }
 
-        [HttpDelete("ExcluirProduto")]
+        [Authorize(Policy = "Cicero")]
+        [HttpDelete("ExcluirProduto/{Id}")]
         public async Task<IActionResult> ExcluirProduto(int IdProduto)
         {
             try
@@ -91,6 +96,7 @@ namespace ProjetoExemploAPI.Controllers
             }
         }
 
+        [Authorize(Policy = "Cicero")]
         [HttpPost("AtualizarProduto")]
         public async Task<IActionResult> AtualizarProduto(Produto produto)
         {

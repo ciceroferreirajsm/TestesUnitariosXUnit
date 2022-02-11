@@ -66,3 +66,4 @@ E:\Heavy Soldier Files\Desktop\Projetos\ProjetoExemploAPI\ProjetoExemploAPI\bin\
 E:\Heavy Soldier Files\Desktop\Projetos\ProjetoExemploAPI\ProjetoExemploAPI\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
 E:\Heavy Soldier Files\Desktop\Projetos\ProjetoExemploAPI\ProjetoExemploAPI\obj\Debug\netcoreapp3.1\ProjetoExemploAPI.MvcApplicationPartsAssemblyInfo.cs
 E:\Heavy Soldier Files\Desktop\Projetos\ProjetoExemploAPI\ProjetoExemploAPI\obj\Debug\netcoreapp3.1\ProjetoExemploAPI.csproj.AssemblyReference.cache
+E:\Heavy Soldier Files\Desktop\Projetos\ProjetoExemploAPI\ProjetoExemploAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll

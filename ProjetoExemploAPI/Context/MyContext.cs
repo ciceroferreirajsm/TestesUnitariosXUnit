@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using ProjetoExemploAPI.Model;
+using ProjetoExemploAPI.Model.Produtos;
 using System.Linq;
 
 namespace ProjetoExemploAPI.Context
