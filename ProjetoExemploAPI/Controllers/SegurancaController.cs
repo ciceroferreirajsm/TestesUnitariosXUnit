@@ -11,8 +11,8 @@ using System.Text;
 
 namespace ProjetoExemploAPI.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
+    //[ApiController]
+    [Route("api/[controller]")]    
     public class SegurancaController : ControllerBase
     {
         private IConfiguration _config;
@@ -22,7 +22,8 @@ namespace ProjetoExemploAPI.Controllers
         }
 
         [HttpPost]
-        public IActionResult Login([FromBody] Login loginDetalhes)
+        [Route("Login")]
+        public IActionResult Login(Login loginDetalhes)
         {
             bool resultado = ValidarUsuario(loginDetalhes);
             if (resultado)

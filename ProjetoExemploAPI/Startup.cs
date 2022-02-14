@@ -11,15 +11,11 @@ using Microsoft.IdentityModel.Logging;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using ProjetoExemploAPI.Context;
-using ProjetoExemploAPI.Model.Authentication;
 using ProjetoExemploAPI.Model.Produtos;
 using ProjetoExemploAPI.repositories;
 using ProjetoExemploAPI.Services;
 using Swashbuckle.AspNetCore.SwaggerUI;
-using System;
-using System.Security.Claims;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace ProjetoExemploAPI
 {
